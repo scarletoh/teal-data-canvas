@@ -55,6 +55,9 @@ export default {
 				},
 				darkBlue: '#0A192F',
 				teal: '#64FFDA',
+				darkBlack: '#121212',
+				darkGray: '#222222',
+				lightGray: '#aaaaaa',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

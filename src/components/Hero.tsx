@@ -3,12 +3,17 @@ import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16">
-      <div className="section-container">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-40 left-20 w-72 h-72 bg-teal/5 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-40 right-20 w-96 h-96 bg-teal/5 rounded-full filter blur-3xl"></div>
+      </div>
+      
+      <div className="section-container relative z-10">
         <div className="flex flex-col items-center text-center">
           <p className="text-teal font-mono mb-5 opacity-0 animate-fade-in">Hello, my name is</p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 opacity-0 animate-fade-in animate-delay-100">
-            <span className="text-white">Data Scientist</span>
+            <span className="text-white bg-clip-text">Data Scientist</span>
           </h1>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-gray-400 opacity-0 animate-fade-in animate-delay-200">
             Python & ML Engineer
@@ -19,13 +24,13 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in animate-delay-400">
             <a 
               href="#projects" 
-              className="px-8 py-3 rounded-md bg-teal text-darkBlue font-medium transition-all hover:bg-opacity-90"
+              className="px-8 py-3 rounded-md bg-teal text-darkBlack font-medium transition-all hover:bg-opacity-90"
             >
               View My Work
             </a>
             <a 
               href="#contact" 
-              className="px-8 py-3 rounded-md border border-teal text-teal font-medium transition-all hover:bg-teal/10"
+              className="px-8 py-3 rounded-md border border-teal text-teal font-medium transition-all hover:bg-teal/20"
             >
               Contact Me
             </a>

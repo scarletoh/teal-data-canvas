@@ -5,13 +5,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="py-8 bg-darkBlue border-t border-gray-800">
+    <footer className="py-8 bg-darkBlack border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center">
           <a 
             href="#home"
             aria-label="Back to top"
-            className="bg-teal text-darkBlue p-3 rounded-full mb-6 hover:bg-opacity-90 transition-all"
+            className="bg-teal text-darkBlack p-3 rounded-full mb-6 hover:bg-opacity-90 transition-all shadow-lg"
           >
             <ArrowUp size={20} />
           </a>

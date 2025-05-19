@@ -33,8 +33,12 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-secondary">
-      <div className="section-container">
+    <section id="projects" className="py-20 bg-darkGray relative">
+      <div className="absolute inset-0 z-0">
+        <div className="absolute bottom-40 left-20 w-96 h-96 bg-teal/5 rounded-full filter blur-3xl"></div>
+      </div>
+      
+      <div className="section-container relative z-10">
         <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
           <div className="h-1 w-20 bg-teal mx-auto"></div>
@@ -61,7 +65,7 @@ const Projects = () => {
                   {project.tags.map((tag, index) => (
                     <span 
                       key={index} 
-                      className="text-xs px-2 py-1 rounded-full bg-darkBlue text-teal"
+                      className="text-xs px-2 py-1 rounded-full bg-darkBlack text-teal"
                     >
                       {tag}
                     </span>

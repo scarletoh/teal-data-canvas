@@ -3,8 +3,12 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-secondary">
-      <div className="section-container">
+    <section id="contact" className="py-20 bg-darkGray relative">
+      <div className="absolute inset-0 z-0">
+        <div className="absolute bottom-20 right-1/3 w-80 h-80 bg-teal/5 rounded-full filter blur-3xl"></div>
+      </div>
+      
+      <div className="section-container relative z-10">
         <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <div className="h-1 w-20 bg-teal mx-auto"></div>
@@ -18,7 +22,7 @@ const Contact = () => {
           <div className="flex flex-wrap justify-center gap-6 mb-10">
             <a 
               href="mailto:youremail@example.com" 
-              className="flex flex-col items-center p-6 bg-darkBlue rounded-lg hover:bg-opacity-80 transition-all"
+              className="flex flex-col items-center p-8 glass-card rounded-lg hover:border-teal transition-all"
               aria-label="Email me"
             >
               <Mail size={32} className="contact-icon mb-3" />
@@ -29,7 +33,7 @@ const Contact = () => {
               href="https://linkedin.com/in/yourusername" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex flex-col items-center p-6 bg-darkBlue rounded-lg hover:bg-opacity-80 transition-all"
+              className="flex flex-col items-center p-8 glass-card rounded-lg hover:border-teal transition-all"
               aria-label="LinkedIn profile"
             >
               <Linkedin size={32} className="contact-icon mb-3" />
@@ -40,7 +44,7 @@ const Contact = () => {
               href="https://github.com/yourusername" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex flex-col items-center p-6 bg-darkBlue rounded-lg hover:bg-opacity-80 transition-all"
+              className="flex flex-col items-center p-8 glass-card rounded-lg hover:border-teal transition-all"
               aria-label="GitHub profile"
             >
               <Github size={32} className="contact-icon mb-3" />
