@@ -90,9 +90,9 @@ const BackgroundAnimation = () => {
           element.x = Math.random() * canvas.width;
         }
         
-        // Draw the number/statistic
+        // Draw the number/statistic with loyal blue color
         ctx.font = `${element.size}px 'Roboto Mono', monospace`;
-        ctx.fillStyle = `rgba(100, 255, 218, ${element.opacity})`;
+        ctx.fillStyle = `rgba(30, 144, 255, ${element.opacity})`; // Changed from teal to loyal blue
         ctx.fillText(element.value, element.x, element.y);
       });
       
@@ -121,7 +121,7 @@ const BackgroundAnimation = () => {
             <Line 
               type="monotone" 
               dataKey="value" 
-              stroke="#64FFDA" 
+              stroke="#1E90FF" // Changed from teal to loyal blue
               strokeWidth={2}
               dot={false} 
             />
@@ -136,8 +136,8 @@ const BackgroundAnimation = () => {
             <Area 
               type="monotone" 
               dataKey="value" 
-              stroke="#64FFDA"
-              fill="#64FFDA"
+              stroke="#1E90FF" // Changed from teal to loyal blue
+              fill="#1E90FF" // Changed from teal to loyal blue
               fillOpacity={0.3}
             />
           </AreaChart>

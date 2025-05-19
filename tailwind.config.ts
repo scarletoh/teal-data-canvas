@@ -54,7 +54,7 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				darkBlue: '#0A192F',
-				teal: '#64FFDA',
+				loyalBlue: '#1E90FF', // Changed from teal to loyal blue
 				darkBlack: '#121212',
 				darkGray: '#222222',
 				lightGray: '#aaaaaa',
