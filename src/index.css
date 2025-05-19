@@ -16,7 +16,7 @@
     --popover: 0 0% 7%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 210 100% 56%; /* Changed from teal to loyal blue */
+    --primary: 225 73% 57%; /* Changed to royal blue */
     --primary-foreground: 0 0% 7%;
 
     --secondary: 0 0% 13%;
@@ -25,7 +25,7 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 67%;
 
-    --accent: 210 100% 56%; /* Changed from teal to loyal blue */
+    --accent: 225 73% 57%; /* Changed to royal blue */
     --accent-foreground: 0 0% 7%;
 
     --destructive: 0 62.8% 30.6%;
@@ -33,7 +33,7 @@
 
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 210 100% 56%; /* Changed from teal to loyal blue */
+    --ring: 225 73% 57%; /* Changed to royal blue */
   }
 }
 
@@ -70,15 +70,15 @@
 }
 
 .skill-icon {
-  @apply flex flex-col items-center justify-center p-5 bg-darkGray rounded-lg border border-gray-800 hover:border-loyalBlue transition-all duration-300 h-full;
+  @apply flex flex-col items-center justify-center p-5 bg-darkGray rounded-lg border border-gray-800 hover:border-royalBlue transition-all duration-300 h-full;
 }
 
 .project-card {
-  @apply bg-darkGray rounded-lg overflow-hidden border border-gray-800 hover:border-loyalBlue shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] h-full;
+  @apply bg-darkGray rounded-lg overflow-hidden border border-gray-800 hover:border-royalBlue shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] h-full;
 }
 
 .contact-icon {
-  @apply text-loyalBlue hover:text-white transition-colors duration-300;
+  @apply text-royalBlue hover:text-white transition-colors duration-300;
 }
 
 .glass-card {
