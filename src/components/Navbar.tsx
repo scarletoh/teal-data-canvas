@@ -6,10 +6,27 @@ import { cn } from '@/lib/utils';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
+      
+      // Determine active section based on scroll position
+      const sections = ['home', 'skills', 'projects', 'resume', 'contact'];
+      const sectionElements = sections.map(id => document.getElementById(id));
+      const scrollPosition = window.scrollY + 100;
+      
+      sectionElements.forEach((section, index) => {
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            setActiveSection(sections[index]);
+          }
+        }
+      });
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -18,6 +35,17 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+    setIsMenuOpen(false);
   };
 
   const navLinks = [
@@ -31,12 +59,14 @@ const Navbar = () => {
   return (
     <nav className={cn(
       "fixed top-0 w-full z-50 transition-all duration-300",
-      scrolled ? "bg-darkBlack/95 shadow-lg backdrop-blur-sm border-b border-gray-800" : "bg-transparent"
+      scrolled ? 
+        "bg-darkBlack/95 shadow-lg backdrop-blur-sm border-b border-gray-800 h-14" : 
+        "bg-transparent h-16"
     )}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="flex justify-between items-center h-full">
           <div className="flex items-center">
-            <span className="text-teal font-inter font-bold text-xl">DS Portfolio</span>
+            <span className="text-royalBlue font-inter font-bold text-xl">My Portfolio</span>
           </div>
           
           {/* Desktop navigation */}
@@ -45,7 +75,15 @@ const Navbar = () => {
               <a 
                 key={link.name}
                 href={link.href}
-                className="text-gray-300 hover:text-teal font-inter text-sm font-medium transition-colors duration-300"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(link.href.substring(1));
+                }}
+                className={cn(
+                  "transition-colors duration-300 font-inter text-sm font-medium",
+                  activeSection === link.href.substring(1) ? 
+                    "text-royalBlue" : "text-gray-300 hover:text-royalBlue"
+                )}
               >
                 {link.name}
               </a>
@@ -56,7 +94,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
-              className="text-gray-300 hover:text-teal focus:outline-none"
+              className="text-gray-300 hover:text-royalBlue focus:outline-none"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -72,8 +110,16 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-teal hover:bg-darkGray rounded-md"
-                onClick={() => setIsMenuOpen(false)}
+                className={cn(
+                  "block px-3 py-2 text-base font-medium rounded-md",
+                  activeSection === link.href.substring(1) ?
+                    "text-royalBlue bg-darkGray/50" : 
+                    "text-gray-300 hover:text-royalBlue hover:bg-darkGray"
+                )}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(link.href.substring(1));
+                }}
               >
                 {link.name}
               </a>

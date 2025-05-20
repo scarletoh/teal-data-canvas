@@ -13,13 +13,14 @@ const Hero = () => {
         <div className="flex flex-col items-start text-left max-w-3xl">
           <p className="text-royalBlue font-mono mb-5 opacity-0 animate-fade-in">Hello, my name is</p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 opacity-0 animate-fade-in animate-delay-100">
-            <span className="text-white bg-clip-text">Data Scientist</span>
+            <span className="text-white bg-clip-text">Peter Njoroge</span>
           </h1>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-gray-400 opacity-0 animate-fade-in animate-delay-200">
-            Python & ML Engineer
+            Data Scientist & ML Engineer
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mb-8 opacity-0 animate-fade-in animate-delay-300">
-            I transform complex data into actionable insights and build machine learning solutions that drive business value.
+            I transform complex data into actionable insights and build machine learning solutions that drive business value. 
+            <span className="block mt-2 text-royalBlue font-semibold italic">"Data Decoded Dominated"</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in animate-delay-400">
             <a 
