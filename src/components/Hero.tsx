@@ -36,6 +36,15 @@ const Hero = () => {
               Contact Me
             </a>
           </div>
+          
+          <div className="mt-6 flex items-center gap-6 opacity-0 animate-fade-in animate-delay-500">
+            <a href="tel:0784416439" className="text-gray-400 hover:text-royalBlue transition-colors">
+              <span className="text-sm">0784416439</span>
+            </a>
+            <a href="mailto:scharbutcher@gmail.com" className="text-gray-400 hover:text-royalBlue transition-colors">
+              <span className="text-sm">scharbutcher@gmail.com</span>
+            </a>
+          </div>
         </div>
         
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 animate-fade-in animate-delay-500">

@@ -1,6 +1,6 @@
 
 import { FileDown } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Resume = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,7 +14,7 @@ const Resume = () => {
   };
   
   // Set up observer
-  useState(() => {
+  useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection, { 
       threshold: 0.2 
     });
