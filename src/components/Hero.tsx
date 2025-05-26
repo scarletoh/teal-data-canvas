@@ -10,7 +10,7 @@ const Hero = () => {
       </div>
       
       <div className="section-container relative z-10">
-        <div className="flex flex-col items-start text-left max-w-3xl">
+        <div className="flex flex-col items-start text-left max-w-4xl">
           <p className="text-royalBlue font-mono mb-5 opacity-0 animate-fade-in">Hello, my name is</p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 opacity-0 animate-fade-in animate-delay-100">
             <span className="text-white bg-clip-text">Peter Njoroge</span>
@@ -18,10 +18,25 @@ const Hero = () => {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-gray-400 opacity-0 animate-fade-in animate-delay-200">
             Data Scientist & ML Engineer
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mb-8 opacity-0 animate-fade-in animate-delay-300">
-            I transform complex data into actionable insights and build machine learning solutions that drive business value. 
-            <span className="block mt-2 text-royalBlue font-semibold italic">"Data Decoded Dominated"</span>
-          </p>
+          
+          <div className="space-y-4 mb-8 opacity-0 animate-fade-in animate-delay-300">
+            <p className="text-lg text-gray-400 leading-relaxed">
+              I am a passionate data scientist driven by the power of analytics and problem-solving. With a deep curiosity for uncovering insights, I use data to transform complexity into clarity—helping businesses and communities make informed decisions. What makes me unique is my ability to bridge technical expertise with strategic thinking, ensuring my work not only delivers accurate models but also meaningful impact.
+            </p>
+            
+            <p className="text-lg text-gray-400 leading-relaxed">
+              Data science is more than just numbers and algorithms for me—it's an avenue for innovation, continuous learning, and real-world solutions. My passion lies in harnessing data to drive change, whether it's optimizing processes, solving challenging problems, or creating predictive models that enhance efficiency and outcomes.
+            </p>
+            
+            <p className="text-lg text-gray-400 leading-relaxed">
+              Through my work, I am able to live out my passion every day by applying cutting-edge techniques to real-world applications. From developing machine learning models to making sense of complex datasets, I am committed to growing my expertise, staying ahead of industry trends, and using data to shape smarter solutions for the future.
+            </p>
+            
+            <p className="text-royalBlue font-semibold italic text-lg mt-4">
+              "Data Decoded Dominated"
+            </p>
+          </div>
+          
           <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in animate-delay-400">
             <a 
               href="#projects" 
