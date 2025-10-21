@@ -103,6 +103,9 @@ export const ModernLoader = ({ isLoading }: ModernLoaderProps) => {
 
   if (!isVisible) return null;
 
+  // Fallback theme handling
+  const currentTheme = theme || 'dark';
+
   return (
     <div className={`
       fixed inset-0 z-[9999] flex items-center justify-center
@@ -110,7 +113,7 @@ export const ModernLoader = ({ isLoading }: ModernLoaderProps) => {
       ${isLoading ? 'opacity-100' : 'opacity-0 pointer-events-none'}
     `}
     style={{
-      backgroundColor: theme === 'dark'
+      backgroundColor: currentTheme === 'dark'
         ? 'rgba(10, 10, 10, 0.95)'
         : 'rgba(245, 245, 245, 0.95)'
     }}
@@ -118,13 +121,13 @@ export const ModernLoader = ({ isLoading }: ModernLoaderProps) => {
       <div
         className="p-6 max-w-sm mx-auto text-center rounded-2xl relative overflow-hidden"
         style={{
-          backgroundColor: theme === 'dark'
+          backgroundColor: currentTheme === 'dark'
             ? 'rgba(26, 26, 26, 0.95)'
             : 'rgba(255, 255, 255, 0.95)',
-          border: `1px solid ${theme === 'dark'
+          border: `1px solid ${currentTheme === 'dark'
             ? 'rgba(220, 20, 60, 0.2)'
             : 'rgba(220, 20, 60, 0.15)'}`,
-          boxShadow: theme === 'dark'
+          boxShadow: currentTheme === 'dark'
             ? '0 25px 50px -12px rgba(220, 20, 60, 0.15)'
             : '0 25px 50px -12px rgba(220, 20, 60, 0.08)'
         }}
@@ -133,7 +136,7 @@ export const ModernLoader = ({ isLoading }: ModernLoaderProps) => {
         <div
           className="absolute inset-0 opacity-50"
           style={{
-            background: `radial-gradient(circle at 30% 40%, ${theme === 'dark'
+            background: `radial-gradient(circle at 30% 40%, ${currentTheme === 'dark'
               ? 'rgba(220, 20, 60, 0.1)'
               : 'rgba(220, 20, 60, 0.05)'}, transparent 70%)`
           }}
@@ -145,11 +148,11 @@ export const ModernLoader = ({ isLoading }: ModernLoaderProps) => {
             <div className="relative">
               <div className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 bg-gradient-to-br from-[#DC143C] to-[#B91C3C] shadow-lg">
                 <img
-                  src={theme === 'dark' ? "/logo.svg" : "/logo-light.svg"}
+                  src={currentTheme === 'dark' ? "/logo.svg" : "/logo-light.svg"}
                   alt="Scar Logo"
                   className="w-6 h-6 transition-all duration-300"
                   style={{
-                    filter: theme === 'dark'
+                    filter: currentTheme === 'dark'
                       ? 'brightness(0) saturate(100%) invert(1) contrast(1.5) drop-shadow(0 0 4px rgba(255,255,255,0.6))'
                       : 'brightness(0) saturate(100%) invert(1) contrast(1.5) drop-shadow(0 0 4px rgba(255,255,255,0.4))',
                     color: 'white'
@@ -167,7 +170,7 @@ export const ModernLoader = ({ isLoading }: ModernLoaderProps) => {
               <div
                 className="absolute inset-0 rounded-full animate-spin"
                 style={{
-                  background: `conic-gradient(from 0deg, transparent 60%, ${theme === 'dark' ? 'rgba(220, 20, 60, 0.8)' : 'rgba(220, 20, 60, 0.6)'}, transparent 80%)`,
+                  background: `conic-gradient(from 0deg, transparent 60%, ${currentTheme === 'dark' ? 'rgba(220, 20, 60, 0.8)' : 'rgba(220, 20, 60, 0.6)'}, transparent 80%)`,
                   borderRadius: '50%',
                   animationDuration: '1.5s'
                 }}
@@ -177,7 +180,7 @@ export const ModernLoader = ({ isLoading }: ModernLoaderProps) => {
               <div
                 className="absolute inset-2 rounded-full"
                 style={{
-                  background: `conic-gradient(from 0deg, ${theme === 'dark' ? 'rgba(220, 20, 60, 0.4)' : 'rgba(220, 20, 60, 0.3)'}, transparent 50%, ${theme === 'dark' ? 'rgba(220, 20, 60, 0.6)' : 'rgba(220, 20, 60, 0.4)'})`,
+                  background: `conic-gradient(from 0deg, ${currentTheme === 'dark' ? 'rgba(220, 20, 60, 0.4)' : 'rgba(220, 20, 60, 0.3)'}, transparent 50%, ${currentTheme === 'dark' ? 'rgba(220, 20, 60, 0.6)' : 'rgba(220, 20, 60, 0.4)'})`,
                   borderRadius: '50%'
                 }}
               ></div>
@@ -196,7 +199,7 @@ export const ModernLoader = ({ isLoading }: ModernLoaderProps) => {
             <h3
               className="font-bold text-lg tracking-tight"
               style={{
-                color: theme === 'dark' ? '#E5E5E5' : '#1a1a1a'
+                color: currentTheme === 'dark' ? '#E5E5E5' : '#1a1a1a'
               }}
             >
               Welcome to My Portfolio 😊
@@ -204,7 +207,7 @@ export const ModernLoader = ({ isLoading }: ModernLoaderProps) => {
             <p
               className="text-sm leading-relaxed"
               style={{
-                color: theme === 'dark' ? '#B3B3B3' : '#666666'
+                color: currentTheme === 'dark' ? '#B3B3B3' : '#666666'
               }}
             >
               Loading your experience...
@@ -221,7 +224,7 @@ export const ModernLoader = ({ isLoading }: ModernLoaderProps) => {
                   backgroundColor: '#DC143C',
                   animationDelay: `${i * 0.15}s`,
                   animationDuration: '1.2s',
-                  boxShadow: `0 0 8px ${theme === 'dark'
+                  boxShadow: `0 0 8px ${currentTheme === 'dark'
                     ? 'rgba(220, 20, 60, 0.6)'
                     : 'rgba(220, 20, 60, 0.4)'}`
                 }}
@@ -234,7 +237,7 @@ export const ModernLoader = ({ isLoading }: ModernLoaderProps) => {
             <div
               className="w-full h-1 rounded-full overflow-hidden"
               style={{
-                backgroundColor: theme === 'dark'
+                backgroundColor: currentTheme === 'dark'
                   ? 'rgba(220, 20, 60, 0.2)'
                   : 'rgba(220, 20, 60, 0.15)'
               }}
@@ -244,7 +247,7 @@ export const ModernLoader = ({ isLoading }: ModernLoaderProps) => {
                 style={{
                   backgroundColor: '#DC143C',
                   width: '60%',
-                  boxShadow: `0 0 10px ${theme === 'dark'
+                  boxShadow: `0 0 10px ${currentTheme === 'dark'
                     ? 'rgba(220, 20, 60, 0.5)'
                     : 'rgba(220, 20, 60, 0.3)'}`
                 }}

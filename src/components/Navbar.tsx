@@ -194,7 +194,7 @@ const Navbar = () => {
                   "font-bold text-xl tracking-tight transition-colors duration-300",
                   scrolled ? "text-gray-900 dark:text-white" : "text-gray-900 dark:text-white"
                 )}>
-                  Scar
+                  Scar Njoroge
                 </span>
               </div>
             </Link>
