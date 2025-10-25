@@ -2,7 +2,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/theme-provider';
 import { useState, useEffect } from 'react';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
 import {
   Award, Users, TrendingUp, Coffee, Heart, Star, Target, Zap, BookOpen,
   Code, Database, Brain, Lightbulb, Rocket, Shield, Globe, Clock,
@@ -14,73 +13,37 @@ const About = () => {
   const { theme } = useTheme();
   const [isVisible, setIsVisible] = useState(false);
 
-  // Scroll reveal hooks for different sections
-  const journeyReveal = useScrollReveal({
-    threshold: 0.2,
-    delay: 200,
-    direction: 'up',
-    distance: 20
-  });
-
-  const skillsReveal = useScrollReveal({
-    threshold: 0.2,
-    delay: 300,
-    direction: 'up',
-    distance: 20
-  });
-
-  const valuesReveal = useScrollReveal({
-    threshold: 0.2,
-    delay: 400,
-    direction: 'up',
-    distance: 20
-  });
-
-  const ctaReveal = useScrollReveal({
-    threshold: 0.2,
-    delay: 500,
-    direction: 'fade',
-    distance: 0
-  });
-
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
   const journey = [
     {
-      year: "2020",
-      title: "Junior Talent Researcher",
-      description: "Supported candidate sourcing and screening for early-stage roles at Olive AI. Helped maintain tracking systems and assisted with outreach during team expansion.",
-      icon: Users,
+      year: "2021",
+      title: "Started Data Science Journey",
+      description: "Began learning Python and statistical analysis during university studies",
+      icon: BookOpen,
       color: "bg-blue-500"
     },
     {
-      year: "2021",
-      title: "UX Consultant & Data Scientist",
-      description: "Worked across hardware in Nairobi's toughest markets, architected brand UX, and delivered emotionally resonant messaging that sticks. Transitioned into data science, applying machine learning and business intelligence to real-world problems.",
-      icon: Lightbulb,
+      year: "2022",
+      title: "First Professional Role",
+      description: "Joined as a junior data analyst, gaining hands-on experience with real business data",
+      icon: TrendingUp,
       color: "bg-green-500"
     },
     {
-      year: "2022",
-      title: "Advanced Data Science Practice",
-      description: "Led projects involving predictive modeling, business intelligence dashboards, and workflow optimization.",
+      year: "2023",
+      title: "Advanced to Data Scientist",
+      description: "Promoted to data scientist role focusing on machine learning and business intelligence",
       icon: Brain,
       color: "bg-purple-500"
     },
     {
-      year: "2023",
-      title: "Independent Consulting",
-      description: "Started offering freelance data science and UX services while continuing professional development.",
-      icon: Briefcase,
-      color: "bg-orange-500"
-    },
-    {
       year: "2024",
-      title: "Founder & Systems Architect",
-      description: "Built ScarGo from the ground up—designing logistics flows, brand identity, and emotionally resonant systems that earn trust.",
-      icon: Rocket,
+      title: "Independent Consulting",
+      description: "Started offering freelance data science services while continuing professional development",
+      icon: Briefcase,
       color: "bg-red-500"
     }
   ];
@@ -189,7 +152,8 @@ const About = () => {
                       <p className="text-gray-600 dark:text-gray-300 text-lg mb-4 font-inter-regular">Nairobi, Kenya • Available for Projects</p>
 
                       <p className="text-lg md:text-xl font-inter-regular text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Transforming complex data challenges into actionable business opportunities through innovative machine learning solutions and strategic data insights.
+                        Transforming complex data challenges into actionable business opportunities through
+                        innovative machine learning solutions and strategic data insights.
                       </p>
                     </div>
 
@@ -274,7 +238,7 @@ const About = () => {
           </section>
 
           {/* Journey Timeline */}
-          <section ref={journeyReveal.elementRef} className="py-20 bg-gradient-to-b from-background to-background/80">
+          <section className="py-20 bg-gradient-to-b from-background to-background/80">
             <div className="container mx-auto px-4">
               <div className={`max-w-6xl mx-auto transition-all duration-1000 delay-200 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                 <div className="text-center mb-16">
@@ -282,7 +246,7 @@ const About = () => {
                     My Journey
                   </h2>
                   <p className="font-inter-regular text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto">
-                    From talent research to entrepreneurship - here's how my diverse experiences shaped my expertise in data science, UX design, and building systems that truly resonate with users.
+                    From university studies to professional practice - here's how my passion for data evolved into practical expertise.
                   </p>
                 </div>
 
@@ -322,7 +286,7 @@ const About = () => {
           </section>
 
           {/* Skills & Expertise */}
-          <section ref={skillsReveal.elementRef} className="py-20 relative overflow-hidden">
+          <section className="py-20 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-[#DC143C]/5 via-transparent to-[#B91C3C]/5"></div>
 
             <div className="container mx-auto px-4 relative z-10">
@@ -363,7 +327,7 @@ const About = () => {
           </section>
 
           {/* Values & Philosophy */}
-          <section ref={valuesReveal.elementRef} className="py-20 bg-gradient-to-b from-background to-background/80">
+          <section className="py-20 bg-gradient-to-b from-background to-background/80">
             <div className="container mx-auto px-4">
               <div className={`max-w-6xl mx-auto transition-all duration-1000 delay-400 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                 <div className="text-center mb-16">
@@ -412,7 +376,7 @@ const About = () => {
           </section>
 
           {/* Call to Action */}
-          <section ref={ctaReveal.elementRef} className="py-20 relative overflow-hidden">
+          <section className="py-20 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-[#DC143C]/10 via-transparent to-[#B91C3C]/10"></div>
 
             <div className="container mx-auto px-4 relative z-10">

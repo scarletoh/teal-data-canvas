@@ -31,7 +31,7 @@ export const LoadingProvider = ({ children }: LoadingProviderProps) => {
     const timer = setTimeout(() => {
       console.log('LoadingProvider: Stopping initial load'); // Debug log
       setIsLoading(false);
-    }, 1000); // Reduced to 1 second for better UX
+    }, 3000); // Increased to 3 seconds to see the loader
 
     return () => clearTimeout(timer);
   }, []);

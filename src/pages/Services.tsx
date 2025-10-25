@@ -3,7 +3,6 @@ import Footer from '@/components/Footer';
 import { Database, Brain, BarChart3, TrendingUp, Zap, Target, Code, Lightbulb, Rocket, Shield, Users, CheckCircle, Star, ArrowRight, Award, Clock, DollarSign } from 'lucide-react';
 import { useTheme } from '@/contexts/theme-provider';
 import { useState, useEffect } from 'react';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 // Typography System Import
 import '../components/typography.css';
@@ -11,35 +10,6 @@ import '../components/typography.css';
 const Services = () => {
   const { theme } = useTheme();
   const [isVisible, setIsVisible] = useState(false);
-
-  // Scroll reveal hooks for different sections
-  const heroReveal = useScrollReveal({
-    threshold: 0.2,
-    delay: 200,
-    direction: 'up',
-    distance: 20
-  });
-
-  const servicesReveal = useScrollReveal({
-    threshold: 0.2,
-    delay: 300,
-    direction: 'up',
-    distance: 20
-  });
-
-  const processReveal = useScrollReveal({
-    threshold: 0.2,
-    delay: 400,
-    direction: 'up',
-    distance: 20
-  });
-
-  const ctaReveal = useScrollReveal({
-    threshold: 0.2,
-    delay: 500,
-    direction: 'fade',
-    distance: 0
-  });
 
   useEffect(() => {
     setIsVisible(true);
@@ -188,7 +158,7 @@ const Services = () => {
         <main className="pt-20">
 
           {/* Hero Section */}
-          <section ref={heroReveal.elementRef} className="py-16 lg:py-20 relative overflow-hidden">
+          <section className="py-16 lg:py-20 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-[#DC143C]/3 via-transparent to-[#B91C3C]/3"></div>
 
             <div className="container mx-auto px-4 relative z-10">
@@ -347,7 +317,7 @@ const Services = () => {
           </section>
 
           {/* Services Grid */}
-          <section ref={servicesReveal.elementRef} className="py-20 bg-gradient-to-b from-background to-background/80">
+          <section className="py-20 bg-gradient-to-b from-background to-background/80">
             <div className="container mx-auto px-4">
               <div className={`max-w-7xl mx-auto transition-all duration-1000 delay-200 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                 <div className="text-center mb-16">
@@ -451,7 +421,7 @@ const Services = () => {
           </section>
 
           {/* Process Section */}
-          <section ref={processReveal.elementRef} className="py-20 relative overflow-hidden">
+          <section className="py-20 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-[#DC143C]/5 via-transparent to-[#B91C3C]/5"></div>
 
             <div className="container mx-auto px-4 relative z-10">
@@ -499,7 +469,7 @@ const Services = () => {
           </section>
 
           {/* CTA Section */}
-          <section ref={ctaReveal.elementRef} className="py-20 relative overflow-hidden">
+          <section className="py-20 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-[#DC143C]/10 via-transparent to-[#B91C3C]/10"></div>
 
             <div className="container mx-auto px-4 relative z-10">

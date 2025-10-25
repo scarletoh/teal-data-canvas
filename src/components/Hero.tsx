@@ -1,72 +1,11 @@
 import { ArrowRight, Download, Mail } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
-import anime from 'animejs';
-import Typed from 'typed.js';
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const heroRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLDivElement>(null);
-  const buttonsRef = useRef<HTMLDivElement>(null);
-  const typedRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     setIsVisible(true);
-
-    // Subtle sequential animations for hero content
-    const animations = anime.timeline({
-      easing: 'easeOutCubic',
-      duration: 800,
-    });
-
-    animations
-      .add({
-        targets: titleRef.current,
-        opacity: [0, 1],
-        translateY: [20, 0],
-        delay: 200,
-      })
-      .add({
-        targets: subtitleRef.current,
-        opacity: [0, 1],
-        translateY: [15, 0],
-        delay: 100,
-      })
-      .add({
-        targets: buttonsRef.current?.children || [],
-        opacity: [0, 1],
-        translateY: [10, 0],
-        delay: anime.stagger(100, { start: 300 }),
-      });
-
-    // Subtle typing effect for subtitle after animations complete
-    setTimeout(() => {
-      if (typedRef.current) {
-        const typed = new Typed(typedRef.current, {
-          strings: [
-            'I work with data to help people see things more clearly.',
-            'I build systems that turn messy information into useful insights.',
-            'I help businesses make smarter decisions with data-driven solutions.'
-          ],
-          typeSpeed: 50,
-          backSpeed: 30,
-          backDelay: 2000,
-          startDelay: 500,
-          loop: true,
-          showCursor: true,
-          cursorChar: '|',
-        });
-
-        return () => {
-          typed.destroy();
-        };
-      }
-    }, 1500);
-
-    return () => {
-      animations.pause();
-    };
   }, []);
 
   return (
@@ -88,15 +27,15 @@ const Hero = () => {
             {/* Left Side - Introduction */}
             <div className="order-2 lg:order-1 text-center lg:text-left space-y-4 lg:space-y-6 mt-16 lg:mt-20 mb-4 lg:mb-8">
               <div className="space-y-4 lg:space-y-6">
-                <h1 ref={titleRef} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight font-['Montserrat']">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight font-['Montserrat']">
                   Hi, I'm{' '}
                   <span className="text-[#DC143C] relative">
-                    Scar Njoroge
+                    Scar
                     <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#DC143C] to-[#DC143C]/60 rounded-full"></div>
                   </span>
                 </h1>
 
-                <div ref={subtitleRef} className="space-y-3 sm:space-y-4 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed font-light max-w-xl mx-auto lg:mx-0 font-['Inter']">
+                <div className="space-y-3 sm:space-y-4 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed font-light max-w-xl mx-auto lg:mx-0 font-['Inter']">
                   <div className="relative flex justify-center mb-6">
                     <div className="relative group">
                       <p className="font-montserrat-bold text-2xl md:text-3xl text-gray-900 dark:text-white relative z-10 px-6 py-3">
@@ -108,13 +47,12 @@ const Hero = () => {
                       <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-[#DC143C] rounded-full opacity-70"></div>
                     </div>
                   </div>
-                  <div className="min-h-[3rem] flex items-center justify-center">
-                    <span
-                      ref={typedRef}
-                      className="text-center"
-                      style={{ minHeight: '3rem', display: 'flex', alignItems: 'center' }}
-                    ></span>
-                  </div>
+                  <p>
+                    I work with data to help people see things more clearly.
+                  </p>
+                  <p>
+                    I build systems that turn messy information into useful insights like spotting patterns, making smarter decisions, and solving everyday business challenges.
+                  </p>
                 </div>
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-500 dark:text-gray-400 font-['Helvetica_Now']">
                   Based in Nairobi, I'm a creative who works with code and data to build tools that make things clearer and more useful.
@@ -122,27 +60,11 @@ const Hero = () => {
               </div>
 
               {/* Desktop PC Button Layout - Clean & Structured */}
-              <div ref={buttonsRef} className="hidden lg:flex flex-col gap-4 justify-start items-start">
+              <div className="hidden lg:flex flex-col gap-4 justify-start items-start">
                 {/* Primary CTA - See my work */}
                 <a
                   href="/projects"
                   className="group relative flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#DC143C] to-[#B91C3C] hover:from-[#B91C3C] hover:to-[#A0163C] text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#DC143C]/20 text-lg overflow-hidden font-['Poppins'] w-full max-w-sm"
-                  onMouseEnter={(e) => {
-                    anime({
-                      targets: e.currentTarget,
-                      scale: 1.05,
-                      duration: 300,
-                      easing: 'easeOutCubic'
-                    });
-                  }}
-                  onMouseLeave={(e) => {
-                    anime({
-                      targets: e.currentTarget,
-                      scale: 1,
-                      duration: 300,
-                      easing: 'easeOutCubic'
-                    });
-                  }}
                 >
                   <span className="relative z-10">See my work</span>
                   <ArrowRight className="w-5 h-5 transition-all duration-300 group-hover:translate-x-1 relative z-10" />
@@ -244,7 +166,7 @@ const Hero = () => {
                     </div>
 
                     <div className="space-y-1 sm:space-y-2">
-                      <p className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">Scar Njoroge</p>
+                      <p className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">Scar Analytics</p>
                       <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-medium">Data Scientist, Business Intelligence & AI Specialist</p>
                       <div className="flex items-center justify-center gap-2 mt-2 sm:mt-3">
                         <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse"></div>
