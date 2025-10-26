@@ -6,19 +6,19 @@ import Projects from '@/components/Projects';
 import Resume from '@/components/Resume';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import BackgroundAnimation from '@/components/BackgroundAnimation';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground relative">
+    <div className="min-h-screen bg-darkBlack text-white">
+      <BackgroundAnimation />
       <Navbar />
-      <main className="relative z-10">
-        <Hero />
-        <Skills />
-        <Projects />
-        <Resume />
-        <Contact />
-        <Footer />
-      </main>
+      <Hero />
+      <Skills />
+      <Projects />
+      <Resume />
+      <Contact />
+      <Footer />
     </div>
   );
 };
