@@ -35,14 +35,14 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-darkGray relative">
       <div className="absolute inset-0 z-0">
-        <div className="absolute bottom-40 left-20 w-96 h-96 bg-royalBlue/5 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-40 left-20 w-96 h-96 bg-teal/5 rounded-full filter blur-3xl"></div>
       </div>
       
       <div className="section-container relative z-10">
-        <div className="mb-12 text-left">
+        <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-          <div className="h-1 w-20 bg-royalBlue"></div>
-          <p className="mt-6 text-gray-400 max-w-3xl">
+          <div className="h-1 w-20 bg-teal mx-auto"></div>
+          <p className="mt-6 text-gray-400 max-w-3xl mx-auto">
             A selection of my recent data science and machine learning projects.
             Each demonstrates different aspects of my technical expertise and problem-solving abilities.
           </p>
@@ -65,7 +65,7 @@ const Projects = () => {
                   {project.tags.map((tag, index) => (
                     <span 
                       key={index} 
-                      className="text-xs px-2 py-1 rounded-full bg-darkBlack text-royalBlue"
+                      className="text-xs px-2 py-1 rounded-full bg-darkBlack text-teal"
                     >
                       {tag}
                     </span>
@@ -74,7 +74,7 @@ const Projects = () => {
                 <div className="flex justify-between mt-auto">
                   <a 
                     href={project.github} 
-                    className="flex items-center text-royalBlue hover:text-white transition-colors"
+                    className="flex items-center text-teal hover:text-white transition-colors"
                     aria-label={`GitHub repository for ${project.title}`}
                   >
                     <Github size={20} className="mr-1" />
@@ -82,7 +82,7 @@ const Projects = () => {
                   </a>
                   <a 
                     href={project.demo} 
-                    className="flex items-center text-royalBlue hover:text-white transition-colors"
+                    className="flex items-center text-teal hover:text-white transition-colors"
                     aria-label={`Live demo for ${project.title}`}
                   >
                     <ExternalLink size={20} className="mr-1" />

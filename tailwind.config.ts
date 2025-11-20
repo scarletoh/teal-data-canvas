@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -53,7 +54,7 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				darkBlue: '#0A192F',
-				royalBlue: '#4169E1', // Changed to royal blue
+				teal: '#64FFDA',
 				darkBlack: '#121212',
 				darkGray: '#222222',
 				lightGray: '#aaaaaa',
@@ -103,35 +104,12 @@ export default {
 						opacity: '1',
 						transform: 'translateY(0)'
 					}
-				},
-				'network-pulse': {
-					'0%, 100%': {
-						opacity: '0.3'
-					},
-					'50%': {
-						opacity: '0.6'
-					}
-				},
-				'float-up': {
-					'0%': {
-						transform: 'translateY(10px)',
-						opacity: '0.1'
-					},
-					'50%': {
-						opacity: '0.5'
-					},
-					'100%': {
-						transform: 'translateY(-10px)',
-						opacity: '0.1'
-					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.5s ease-out forwards',
-				'network-pulse': 'network-pulse 4s ease-in-out infinite',
-				'float-up': 'float-up 8s ease-in-out infinite'
+				'fade-in': 'fade-in 0.5s ease-out forwards'
 			}
 		}
 	},
